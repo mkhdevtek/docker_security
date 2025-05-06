@@ -27,8 +27,8 @@ WORKDIR /var/www/html
 COPY . .
 
 # Copiar script de instalación JWT
-COPY docker/jwt-setup.sh /usr/local/bin/jwt-setup.sh
-RUN chmod +x /usr/local/bin/jwt-setup.sh
+# COPY docker/jwt-setup.sh /usr/local/bin/jwt-setup.sh
+# RUN chmod +x /usr/local/bin/jwt-setup.sh
 
 # Instalar dependencias del proyecto
 RUN composer install
@@ -39,4 +39,6 @@ RUN chmod -R 775 storage bootstrap/cache
 EXPOSE 8000
 
 # Ejecutar script de instalación JWT y luego iniciar el servidor
-CMD /usr/local/bin/jwt-setup.sh && php artisan serve --host=0.0.0.0 --port=8000
+# CMD /usr/local/bin/jwt-setup.sh && php artisan serve --host=0.0.0.0 --port=8000
+
+CMD php artisan serve --host=0.0.0.0 --port=8000

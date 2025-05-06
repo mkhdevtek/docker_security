@@ -11,7 +11,7 @@ import TaskForm from './components/TaskForm';
 import Navigation from './components/Navigation';
 
 // Configuración de Axios
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost/api';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.defaults.headers.common['Accept'] = 'application/json';
 
