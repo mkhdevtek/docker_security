@@ -11,7 +11,7 @@ class RoleController extends Controller
 {
     public function list() {
         $role = Role::all();
-        if(!$role) {
+        if($role->isEmpty()) {
             $data = [
                 'message' => 'Roles table is empty',
                 'status' => 200
